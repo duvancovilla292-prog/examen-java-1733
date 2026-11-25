@@ -53,7 +53,7 @@ public class OrdenServicioVista implements VistaMenu {
             "Activar / desactivar técnico",
             "Eliminar técnico sin historial",
             "Recepción rápida: cliente + vehículo + orden",
-            "Exportar Orden de Servicio");  // Examen: opción 21
+            "Exportar Orden de Servicio");// para el examen agregue esta opcion numero 21
 
     // Visto en clase: encapsulamiento: private + getters + validación -> S06Demo00Billetera y S06Demo01PerfilUsuario (Sesión 06)
     private final VistaConsola consola;

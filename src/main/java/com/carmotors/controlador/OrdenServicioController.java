@@ -22,7 +22,7 @@
  */
 package com.carmotors.controlador;
 
-import com.carmotors.evaluacion.ExportacionOrdenServicio;
+import com.carmotors.servicio.ExportacionOrdenServicio;
 import com.carmotors.excepcion.DatoInvalidoException;
 import com.carmotors.modelo.EstadoServicio;
 import com.carmotors.modelo.OrdenServicio;
@@ -34,7 +34,6 @@ import com.carmotors.vista.ClienteVista;
 import com.carmotors.vista.InventarioVista;
 import com.carmotors.vista.OrdenServicioVista;
 import com.carmotors.vista.VistaConsola;
-
 import java.io.IOException;
 import java.nio.file.Path;
 import java.sql.SQLException;
@@ -83,19 +82,17 @@ public class OrdenServicioController extends ControladorBase {
         registrar("18", () -> cambiarActividad());
         registrar("19", () -> eliminarTecnico());
         registrar("20", () -> recepcionRapida());
-        registrar("21", () -> exportarOrden());  // Examen: exportar orden de servicio a .txt
+        registrar("21", () -> exportarOrden());
     }
-
-    // Examen: pide el ID, exporta la orden a orden_servicio_[ID].txt y confirma el nombre del archivo.
-    // Si el ID no existe, ExportacionOrdenServicio lanza RecursoNoEncontradoException y
-    // ControladorBase la muestra como mensaje de error amigable.
     private void exportarOrden() throws SQLException, IOException {
         referencia("Órdenes registradas", () -> vista.mostrarOrdenes(servicio.listarOrdenes()));
         int id = consola.leerEntero("ID del servicio a exportar: ");
-        Path archivo = new ExportacionOrdenServicio().exportarOrden(id);
-        consola.mostrarExito("Reporte generado con éxito: " + archivo.getFileName());
-    }
 
+        Path archivo = new ExportacionOrdenServicio().exportarOrden(id);
+
+        consola.mostrarExito("Reporte generado con éxito: " + archivo.getFileName());
+
+    }
     // Visto en clase: try / catch / throw / throws -> S10Demo03ExcepcionesMain (Sesión 10)
     private void crearOrden() throws SQLException {
         referencia("Vehículos registrados", () -> clientes.mostrarVehiculos(servicio.listarVehiculos()));
