@@ -285,3 +285,12 @@ El archivo `.gitignore` excluye la carpeta de compilación (`target/`), los `*.c
 - Exneider Nava
 - Andrés Rueda
 - *(completar: integrante con usuario de GitHub `felizin_tk`)*
+
+
+
+Evaluacion 
+
+
+lo que hice fue censillo, realmente la mayoria de lo q use ya estaba solo recicle codigo pero en resumen, primero mire como era que teniamos el proyecto, en la lista de las opciones de la vista de Orden servicio agrege la opcion "Exportar Orden de Servicio" archivo: OrdenServicioVista
+
+Lo siguiente que hice fue agregar la opcion literalmente ya que para ese momento la lista no  crea directamente lo que hay que hacer asi que me fui a su controlador, y agrege la opcion en el mapa, de ahi me quede un rato analizando, cree el modelo, en el q practiacamente too el codigo fue copie y pegue de los otros modelos, exeptuando el metodo para calcular el total de lo q se gasto en repuestos, y pues el total a pagar, de alli me fui crear su servicio para que cree el archivo y aqui primero empece con una copia de lo q hacia factura solo q fui diferiendo y guardando todo en una variable texto q iba guardado cada cosa a diferencia de factura q era una lista con cada linea me fui de nuevo a su controlador cporrespondiente para agregarlo y alli me di cuenta que no va a saber de donde sacar la info entonces segui el ejemplo de los otros archivos y le cree su dao para la coneccion a mysql, y casi todo eso fue copie y pegue de los potros la consulta fui agregando mas cosas mientras veia q faltava ajjaja
